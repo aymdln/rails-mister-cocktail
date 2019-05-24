@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo%>');">
 	<div class="container">
 		<h1><%= @cocktail.name %></h1>
 	</div>
@@ -6,11 +6,14 @@
 <div class="container">
 	<% @doses.each do |d| %>
 		<div class="card-product">
-			<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+			<%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"> %>
 			<div class="card-product-infos">
 				<h2><%= d.ingredient.name %></h2>
 				<p><strong><%= d.description %></strong></p>
 			</div>
 		</div>
 	<% end %>
+  <div class="container">
+    <%= link_to 'Add dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
+  </div>
 </div>
