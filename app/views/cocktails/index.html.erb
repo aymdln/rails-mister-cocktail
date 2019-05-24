@@ -1,2 +1,11 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<div class="container">
+	<div class="cards my-3">
+		<% @cocktails.each do |c| %>
+			<%= link_to cocktail_path(c) do %>
+				<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+					<%= c.name %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>

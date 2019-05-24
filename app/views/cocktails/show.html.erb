@@ -1,2 +1,16 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('');">
+	<div class="container">
+		<h1><%= @cocktail.name %></h1>
+	</div>
+</div>
+<div class="container">
+	<% @doses.each do |d| %>
+		<div class="card-product">
+			<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+			<div class="card-product-infos">
+				<h2><%= d.ingredient.name %></h2>
+				<p><strong><%= d.description %></strong></p>
+			</div>
+		</div>
+	<% end %>
+</div>
