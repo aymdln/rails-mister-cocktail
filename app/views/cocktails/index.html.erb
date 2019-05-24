@@ -1,8 +1,15 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://avis-vin.lefigaro.fr/var/img/158/39392-650x330-cocktails.jpg');">
+	<div class="container">
+		<h1>Cocktails</h1>
+    <%= link_to 'Add Cocktail', new_cocktail_path, class: "btn btn-primary" %>
+	</div>
+</div>
+
 <div class="container">
 	<div class="cards my-3">
 		<% @cocktails.each do |c| %>
 			<%= link_to cocktail_path(c) do %>
-				<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+				<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path c.photo%>')">
 					<%= c.name %>
 				</div>
 			<% end %>

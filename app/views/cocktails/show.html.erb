@@ -3,17 +3,15 @@
 		<h1><%= @cocktail.name %></h1>
 	</div>
 </div>
-<div class="container">
-	<% @doses.each do |d| %>
-		<div class="card-product">
-			<%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"> %>
-			<div class="card-product-infos">
-				<h2><%= d.ingredient.name %></h2>
+<div class="container my-3">
+	<ul class="list-group">
+		<% @doses.each do |d| %>
+			<li class="list-group-item my-1">
+				<h4><%= d.ingredient.name %></h4>
 				<p><strong><%= d.description %></strong></p>
-			</div>
-		</div>
-	<% end %>
-  <div class="container">
-    <%= link_to 'Add dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
-  </div>
+			</li>
+		<% end %>
+	</ul>
+	<%= link_to 'Add dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary mt-2' %>
+</div>
 </div>
