@@ -1,8 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo%>');">
-	<div class="container">
-		<h1><%= @cocktail.name %></h1>
-	</div>
-</div>
+<%= render 'shared/banner', cocktail: @cocktail %>
 <div class="container my-3">
 	<ul class="list-group">
 		<% @doses.each do |d| %>
@@ -13,5 +9,11 @@
 		<% end %>
 	</ul>
 	<%= link_to 'Add dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary mt-2' %>
+</div>
+<div class="container">
+  <%= link_to "Delete", cocktail_path(@cocktail),
+      method: :delete,
+      data: { confirm: "Are you sure?" } ,
+      class: "btn btn-danger" %>
 </div>
 </div>
